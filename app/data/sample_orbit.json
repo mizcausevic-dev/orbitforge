@@ -1,0 +1,112 @@
+{
+  "mission": "Northstar Orbital Operations Mesh",
+  "theater": "LEO debris mitigation and comms relay corridor",
+  "assets": [
+    {
+      "asset_id": "sat-101",
+      "name": "Relay Finch 01",
+      "class": "comms-relay",
+      "orbit_band": "LEO-550",
+      "task": "latency relay",
+      "fuel_margin_pct": 68,
+      "collision_distance_km": 3.1,
+      "crosslink_health": 94,
+      "override_ready": true,
+      "policy_envelope": "relay-conjunction",
+      "last_maneuver_hours": 7
+    },
+    {
+      "asset_id": "sat-204",
+      "name": "Sentinel Drift 04",
+      "class": "debris-watch",
+      "orbit_band": "LEO-610",
+      "task": "debris vector classification",
+      "fuel_margin_pct": 46,
+      "collision_distance_km": 0.7,
+      "crosslink_health": 88,
+      "override_ready": true,
+      "policy_envelope": "debris-proximity-threshold",
+      "last_maneuver_hours": 3
+    },
+    {
+      "asset_id": "sat-311",
+      "name": "Forge Node 11",
+      "class": "manufacturing-agent",
+      "orbit_band": "LEO-720",
+      "task": "microfab handoff",
+      "fuel_margin_pct": 72,
+      "collision_distance_km": 5.6,
+      "crosslink_health": 79,
+      "override_ready": false,
+      "policy_envelope": "fab-assembly-window",
+      "last_maneuver_hours": 28
+    },
+    {
+      "asset_id": "sat-415",
+      "name": "Vector Shepherd 15",
+      "class": "tug-agent",
+      "orbit_band": "LEO-590",
+      "task": "debris escort",
+      "fuel_margin_pct": 39,
+      "collision_distance_km": 0.4,
+      "crosslink_health": 71,
+      "override_ready": false,
+      "policy_envelope": "collision-avoidance-priority",
+      "last_maneuver_hours": 1
+    }
+  ],
+  "events": [
+    {
+      "event_id": "orb-9001",
+      "timestamp": "2026-05-12T18:06:00Z",
+      "asset_id": "sat-415",
+      "orbit_band": "LEO-590",
+      "severity": "critical",
+      "event_type": "conjunction-alert",
+      "policy_triggered": "collision-avoidance-priority",
+      "handoff_chain": ["swarm-planner", "debris-classifier", "human-mission-lead"],
+      "override_applied": true,
+      "resolution_state": "maneuver-authorized",
+      "distance_km": 0.38
+    },
+    {
+      "event_id": "orb-9002",
+      "timestamp": "2026-05-12T18:10:00Z",
+      "asset_id": "sat-204",
+      "orbit_band": "LEO-610",
+      "severity": "high",
+      "event_type": "debris-track-reassignment",
+      "policy_triggered": "debris-proximity-threshold",
+      "handoff_chain": ["track-daemon", "swarm-planner"],
+      "override_applied": false,
+      "resolution_state": "replanned",
+      "distance_km": 0.74
+    },
+    {
+      "event_id": "orb-9003",
+      "timestamp": "2026-05-12T18:14:00Z",
+      "asset_id": "sat-311",
+      "orbit_band": "LEO-720",
+      "severity": "medium",
+      "event_type": "crosslink-degradation",
+      "policy_triggered": "fab-assembly-window",
+      "handoff_chain": ["crosslink-monitor", "manufacturing-coordinator"],
+      "override_applied": false,
+      "resolution_state": "stabilized",
+      "distance_km": 0.0
+    },
+    {
+      "event_id": "orb-9004",
+      "timestamp": "2026-05-12T18:19:00Z",
+      "asset_id": "sat-101",
+      "orbit_band": "LEO-550",
+      "severity": "low",
+      "event_type": "latency-spike",
+      "policy_triggered": "relay-conjunction",
+      "handoff_chain": ["relay-balancer", "network-supervisor"],
+      "override_applied": false,
+      "resolution_state": "cleared",
+      "distance_km": 0.0
+    }
+  ]
+}
