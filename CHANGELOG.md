@@ -7,12 +7,13 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [1.0.0] - 2026-05-12
 
 ### Released
-- Published **orbitforge** as a public, portfolio-grade platform governance system.
+- Published **orbitforge** as a public, portfolio-grade autonomous systems governance system.
 - Packaged the current implementation, documentation, validation workflow, and proof surfaces into a repo that could be reviewed by engineering, product, and operating stakeholders.
-- Tightened the repo story around the real-world operating problem: policy drift, observability blind spots, latency pressure, and fragmented control evidence.
+- Tightened the repo story around the real-world operating problem: collision provenance gaps, override ambiguity, and weak autonomous-system auditability.
 
 ### Why this mattered
-- Existing approaches in monitoring, SIEM, CI, and governance tools were useful, but they each solved a slice of the problem, but not the combined operator view needed to respond with confidence.
+- Existing approaches in fleet telemetry, mission dashboards, and simulation tooling were useful for adjacent workflows.
+- They still missed the core need: a governance layer that could make safety, override, and incident replay legible to operators.
 - This release made the repo readable as an operational capability rather than a narrow technical demo.
 
 ## [0.1.0] - 2026-02-19
@@ -34,7 +35,7 @@ This log is intentionally written as an engineering record rather than a launch 
 - Added enough shape to test whether the project could surface action, not just information.
 
 ### Problem pressure
-- The prototype phase was shaped by concrete issues such as policy drift, observability blind spots, latency pressure, and fragmented control evidence.
+- The prototype phase was shaped by concrete issues such as collision provenance gaps, override ambiguity, and weak autonomous-system audit trails.
 - This was the point where the project moved from a sketch into something worth hardening.
 
 ## [Design Phase] - 2025-09-14
@@ -55,11 +56,11 @@ This log is intentionally written as an engineering record rather than a launch 
 ## [Idea Origin] - 2025-02-14
 
 ### Observed
-- The initial idea surfaced while looking at how teams were handling policy drift, observability blind spots, latency pressure, and fragmented control evidence.
+- The initial idea surfaced while looking at how teams were handling collision provenance gaps, override ambiguity, and weak autonomous-system auditability.
 - The recurring pattern was that people could often see fragments of the problem, but not the whole operational story in one place.
 
 ### Insight
-- The missing product was not another point solution. It was a clearer operating layer that made the work legible to platform, security, and reliability teams.
+- The missing product was not another point solution. It was a clearer operating layer that made the work legible to robotics, aerospace, and safety operations teams.
 - That insight became the basis for **orbitforge**.
 
 ## [Background Signals] - 2022-08-09
